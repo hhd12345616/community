@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -52,6 +53,14 @@ public class LoginServiceImpl implements ILoginService {
 
     @Override
     public CommonResult logout() {
-        return null;
+        CommonResult commonResult = new CommonResult();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        User user = (User)authentication.getPrincipal();
+        Long userid = user.getId();
+        redisCache.deleteObject(userid.toString());
+        User user1 = redisCache.getCacheObject(userid.toString());
+            commonResult.setCode(ResponseStatusCode.SUCCESS);
+            commonResult.setMessage("注销成功");
+        return commonResult;
     }
 }

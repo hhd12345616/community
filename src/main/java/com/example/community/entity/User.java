@@ -18,15 +18,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @TableName(value = "sys_user")
 public class User implements Serializable, UserDetails {
     private static final long serialVersionUID= -40356785423868312L;
-
-    public User(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
-    }
 
     @TableId
     private Long id;

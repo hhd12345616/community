@@ -1,7 +1,5 @@
 package com.example.community.filter;
 
-import com.example.community.entity.CommonResult;
-import com.example.community.entity.ResponseStatusCode;
 import com.example.community.entity.User;
 import com.example.community.utils.JwtUtil;
 import com.example.community.utils.RedisCache;
