@@ -6,4 +6,5 @@ public class ResponseStatusCode {
     public static final Integer NOT_LOGIN = 402;
     public static final Integer LOGOUT_FAIL = 403;
     public static final Integer REGISTER_FAIL =404;
+    public static final Integer PUBLISH_FAIL=405;
 }

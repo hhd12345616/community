@@ -3,6 +3,7 @@ package com.example.community.service.impl;
 import com.example.community.entity.CommonResult;
 import com.example.community.entity.ResponseStatusCode;
 import com.example.community.entity.User;
+import com.example.community.mapper.MenuMapper;
 import com.example.community.service.ILoginService;
 import com.example.community.utils.JwtUtil;
 import com.example.community.utils.RedisCache;

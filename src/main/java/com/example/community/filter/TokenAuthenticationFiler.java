@@ -1,6 +1,7 @@
 package com.example.community.filter;
 
 import com.example.community.entity.User;
+import com.example.community.mapper.MenuMapper;
 import com.example.community.utils.JwtUtil;
 import com.example.community.utils.RedisCache;
 import io.jsonwebtoken.Claims;
@@ -22,7 +23,6 @@ import java.util.Objects;
 public class TokenAuthenticationFiler extends OncePerRequestFilter {
     @Autowired
     private RedisCache redisCache;
-
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {

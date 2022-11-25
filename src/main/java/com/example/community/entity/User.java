@@ -4,9 +4,11 @@ import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.example.community.mapper.MenuMapper;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -43,7 +45,7 @@ public class User implements Serializable, UserDetails {
     private Integer delFlag;//0-未删除，1-已删除
 
     @TableField(exist = false)
-    public List<String> permissions;
+    public List<String> permissions =null;
 
     @TableField(exist = false)
     @JSONField(serialize = false)
