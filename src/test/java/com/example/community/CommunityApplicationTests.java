@@ -34,5 +34,11 @@ class CommunityApplicationTests {
         article.setFlag("[test]");
         articleMapper.insert(article);
     }
+    @Test
+    void testPage(){
+        Integer page = 0;
+        Integer size = 5;
+        System.out.println(articleMapper.selectByPage(page,size));
+    }
 
 }

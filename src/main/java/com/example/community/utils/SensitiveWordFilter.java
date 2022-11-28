@@ -44,7 +44,7 @@ public class SensitiveWordFilter {
                         continue;
                     }
                     //敏感词库查询未结束
-                    if (word.next != null || word.next.size()!=0){
+                    if (word.next != null && word.next.size()!=0){
                         word =word.next.get(__char__[j]);
                         //未查到敏感字符
                         if (word==null){

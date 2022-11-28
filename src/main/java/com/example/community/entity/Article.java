@@ -13,7 +13,10 @@ import lombok.NoArgsConstructor;
 public class Article {
     @TableId
     private Long id;
+    private Long user_id;
     private String title;
     private String content;
     private String flag;
+    private int likes;
+    private boolean isAccess;
 }
